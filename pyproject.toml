@@ -4,6 +4,11 @@ version = "0.1.0"
 description = ""
 authors = ["Ben Vincent <ben@unkin.net>"]
 
+[tool.poetry.source]
+name = "proxy"
+url = "http://proxy.prod.unkin.net"
+default = true
+
 [tool.poetry.dependencies]
 python = "^3.9"
 requests-html = "^0.10.0"
