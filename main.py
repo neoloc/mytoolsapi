@@ -6,7 +6,7 @@ import uvicorn
 
 class urlrender_request(BaseModel):
     url: HttpUrl
-    sleep: int | None = 0
+    sleep: int
 
 app = FastAPI()
 
