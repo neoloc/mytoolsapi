@@ -7,7 +7,7 @@ import uvicorn
 from base64 import b64encode, b64decode
 
 # create connection to local memcached service
-cache = base.Client(('localhost', 11211))
+cache = base.Client(('127.0.0.1', 11211))
 
 # create request item class
 class urlrender_request(BaseModel):
