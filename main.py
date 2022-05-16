@@ -37,7 +37,7 @@ async def url_render_title(item: urlrender_request):
         cache.set(urlencode, soupcode)
     else:
         # already exists in memcached, create a new soup object from memcached
-        soup = BeautifulSoup(b64decode(cache.get('test')).decode("utf-8", "ignore"), 'lxml')
+        soup = BeautifulSoup(b64decode(cache.get(urlencode)).decode("utf-8", "ignore"), 'lxml')
     # return the data as json
     return {
         "url": f"{item.url}",
@@ -60,7 +60,7 @@ async def url_render_body(item: urlrender_request):
         cache.set(urlencode, soupcode)
     else:
         # already exists in memcached, create a new soup object from memcached
-        soup = BeautifulSoup(base64.b64decode(cache.get('test')).decode("utf-8", "ignore"), 'lxml')
+        soup = BeautifulSoup(base64.b64decode(cache.get(urlencode)).decode("utf-8", "ignore"), 'lxml')
     # return the data as json
     return {
         "url": f"{item.url}",
